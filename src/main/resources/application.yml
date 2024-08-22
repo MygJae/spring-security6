@@ -1,2 +1,9 @@
 spring.output.ansi.enabled: always
 server.port: 8081
+
+spring:
+  security:
+    user:
+      name: user
+      password: 1111
+      roles: USER

@@ -1,0 +1,10 @@
+설정 클래스
+SecurityBuilder: 빌더 클래스로서 웹 보안을 구성하는 빈 객체와 설정클래스들을 생성하는 역할을 하며 대표적으로 WebSecurity, HttpSecurity
+SecurityConfigurer: Http 요청과 관련된 보안처리를 담당하는 필터들을 생성하고 여러 초기화 설정에 관여
+SecurityBuilder 는 SecurityConfigurer를 참조하고 있으며 인증 및 인가 초기화 작업은 SecurityConfigurer에 의해 진행
+
+HttpSecurity: HttpSecurity는 보안에 필요한 각 설정 클래스와 필터들을 생성하고 최종적으로 SecurityFilterChain 빈 생성
+WebSecurity: HttpSecurity에서 생성한 SecurityFilterChain 빈을 SecurityBuilder에 저장 build() 를 실행하면 SecurityBuilder에서 SecurityFilterChain을 꺼내어 FilterChainProxy 생성자에게 전달
+
+DelegateFilterProxy: 스프링에서 사용되는 특별한 서블릿 필터로, 서블릿 컨테이너와 스프링 애플리케이션 컨텍스트 간의 연결고리 역할을 하는 필터, 스프링의 의존성 주입 및 빈 관리 기능과 연동되도록 설계된 필터라 할 수 있음
+FilterChainProxy: springSecurityFilterChain의 이름으로 생성되는 필터 빈으로서 DelegatingFilterProxy으로 부터 요청을 위임 받고 보안 처리 역할

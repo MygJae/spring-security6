@@ -53,14 +53,10 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
-                .password("{noop}2222")
+                .password("{noop}1111")
                 .roles("USER")
                 .build();
-        UserDetails user1 = User.withUsername("user1")
-                .password("{noop}3333")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user, user1);
+        return new InMemoryUserDetailsManager(user);
     }
 
 

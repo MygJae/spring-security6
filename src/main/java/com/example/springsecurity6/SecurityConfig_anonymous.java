@@ -11,24 +11,24 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-/*
+
 @EnableWebSecurity
 @Configuration
-public class SecurityConfig_rememberMe {
+public class SecurityConfig_anonymous {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .anyRequest().authenticated())
+                    .requestMatchers("/anonymous").hasRole("GUEST")
+                    .requestMatchers("/anonymousContext", "/authenticated").permitAll()
+                    .anyRequest().authenticated())
                 .formLogin(withDefaults())
-                .rememberMe(rememberMe -> rememberMe
-//                        .alwaysRemember(true)
-                        .tokenValiditySeconds(3600)
-                        .userDetailsService(userDetailsService())
-                        .rememberMeParameter("remember-me")
-                        .rememberMeCookieName("remember-me-cookie")
-                        .key("remember-me-sample"));
+                .anonymous(anonymous -> anonymous
+                        .principal("guest")
+                        .authorities("ROLE_GUEST")
+
+                );
         return http.build();
     }
 
@@ -44,4 +44,3 @@ public class SecurityConfig_rememberMe {
 
 }
 
-*/

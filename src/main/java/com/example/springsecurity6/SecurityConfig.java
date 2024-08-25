@@ -19,12 +19,12 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import java.io.IOException;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-
-@EnableWebSecurity
-@Configuration
+/*
+//@EnableWebSecurity
+//@Configuration
 public class SecurityConfig {
 
-    @Bean
+//    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
@@ -50,7 +50,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
+//    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -62,3 +62,4 @@ public class SecurityConfig {
 
 }
 
+*/

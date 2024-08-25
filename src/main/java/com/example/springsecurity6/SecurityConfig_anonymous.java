@@ -11,7 +11,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-
+/*
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig_anonymous {
@@ -44,3 +44,4 @@ public class SecurityConfig_anonymous {
 
 }
 
+*/

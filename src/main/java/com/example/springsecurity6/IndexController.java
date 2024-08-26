@@ -50,5 +50,15 @@ public class IndexController {
         return "logoutSuccess";
     }
 
+    @GetMapping("/")
+    public String index(String customParam) {
+        if (customParam != null) {
+            return "index?customParam=" + customParam;
+        } else {
+            return "index";
+        }
+    }
+
+
 
 }

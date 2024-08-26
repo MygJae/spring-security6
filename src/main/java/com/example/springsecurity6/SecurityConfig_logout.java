@@ -26,7 +26,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import java.io.IOException;
 
 import static org.springframework.security.config.Customizer.withDefaults;
-
+/*
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig_logout {
@@ -79,3 +79,4 @@ public class SecurityConfig_logout {
 
 }
 
+*/

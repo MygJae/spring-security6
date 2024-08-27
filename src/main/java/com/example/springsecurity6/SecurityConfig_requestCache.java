@@ -19,7 +19,7 @@ import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.security.web.savedrequest.SavedRequest;
 
 import java.io.IOException;
-
+/*
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig_requestCache {
@@ -58,3 +58,4 @@ public class SecurityConfig_requestCache {
 
 }
 
+*/
